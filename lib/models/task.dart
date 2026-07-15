@@ -34,4 +34,21 @@ Priorité  : $_priority
 Terminée  : $_completed
 ''';
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      "id": id,
+      "title": title,
+      "priority": priority,
+      "completed": completed,
+    };
+  }
+
+  factory Task.fromJson(Map<String, dynamic> json) {
+    Task task = Task(json["id"], json["title"], json["priority"]);
+
+    task.completed = json["completed"];
+
+    return task;
+  }
 }
