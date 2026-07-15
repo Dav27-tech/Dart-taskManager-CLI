@@ -3,6 +3,8 @@ abstract class Repository<T> {
 
   void remove(int id);
 
+  void complete(int id);
+
   T? findById(int id);
 
   List<T> findAll();
